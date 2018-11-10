@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>属性绑定</title>
+	 <script src="js/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <!--v-bind为标签绑定属性-->
+    <p v-bind:id="pid">{{msg}}</p>
+	
+	<!--也可以缩写为:-->
+	<p :id="pid2">{{msg}}</p>
+  </div>
+  <script>
+      var vm=new Vue({
+	    el:"#app",
+		data:{
+		  msg:"hello world",
+		  pid:"pid",
+		  pid2:"pid2"
+		}
+	  });
+  </script>
+</body>
+</html>

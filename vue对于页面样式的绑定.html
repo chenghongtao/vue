@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>样式绑定</title>
+	 <script src="js/vue.js"></script>
+	 <style>
+	    .pcolor{
+		  color:red;
+		}
+		.pSize{
+		  font-size:30px;
+		}
+	 </style>
+</head>
+<body>
+  <div id="app">
+    <!--:class 为标签绑定样式 -->
+	
+	<!--绑定多个样式,不管是一个还是多个，必须使用数组-->
+	<p  :class="['pcolor']"> 样式绑定</p>
+	<p  :class="['pcolor','pSize']"> 样式绑定</p>
+	
+	<!--数组中使用三元表达式-->
+	<p  :class="[flag1?'pcolor':'pSize']"> 样式绑定</p>
+  </div>
+  <script>
+      var vm=new Vue({
+	    el:"#app",
+		data:{
+		   flag1:true
+		}
+	  });
+  </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue基本赋值</title>
+    <script src="js/vue.js"></script>
+	
+</head>
+<body>
+  <div id="app">
+      <!--vue通过{{data中定义的变量值来赋值}}-->
+      <p>{{msg}}</p>
+	  <!--vue通过v-text指令赋值-->
+      <p v-text="msg"></p>
+	  <!--vue通过v-html进行赋值，可以将赋值的元素的标签也显示出来-->
+      <p v-html="msg2"></p>
+  </div>
+  <script>
+      var vm=new Vue({
+          el:"#app",
+          data:{
+              msg:"hello",
+			  msg2:"<h1>hello</h1>"
+          }
+      });
+  </script>
+</body>
+</html>

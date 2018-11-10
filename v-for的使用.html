@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-for的使用</title>
+	 <script src="js/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <!--v-for用来循环遍历数据，list，对象集合-->
+	<!--遍历数组,如果不需要索引的话，可以写成 val in arr,一般第一个是值-->
+	<p v-for="(val,index) in arr"> 值：{{val}}+"----"+ 索引:{{index}}</p>
+	
+	<!--遍历对象,第一个是对象属性的值，第二个是属性名称，第三个是属性的索引-->
+	<p v-for="(val,key,index) in obj">{{val}}:{{key}}:{{index}}</p>
+	
+	<!--遍历数字,从1开始-->
+	<p v-for="i in 10" >{{i}}</p>
+	
+	<!--遍历复杂数组-->
+	<p v-for="(obj,key) in objList">{{obj.name}}:{{obj.age}}</p>
+  </div>
+  <script>
+      var vm=new Vue({
+	    el:"#app",
+		data:{
+		   arr:[1,2,3,4,5],
+		   obj:{
+		      name:"chenghongtao",
+			  age:27,
+			  sex:"man"
+		   },
+		   objList:[
+		      {
+			     name:"man1",
+				 age:11
+			  },
+			  {
+			    name:"man2",
+				age:12
+			  }
+		   ]
+		}
+	  });
+  </script>
+</body>
+</html>
