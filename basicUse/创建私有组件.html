@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>创建私有组件</title>
+	 <script src="js/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+	<test-con></test-con>
+	<testTem></testTem>
+  </div
+  <template id="templ">
+    <h1>利用template元素创建组件</h1>
+  </template>
+  <script>
+      var testCon={
+	     template:'<h3>这是新创建私有组件</h3>'
+	  };
+	  //利用template元素创建组件
+		var testTem={
+		  template:'#templ'
+		};
+	 Vue.component('mycon',testCon);
+      var vm=new Vue({
+	    el:"#app",
+		data:{
+		},
+		components:{
+		   testCon,testTem
+		}
+	  });
+  </script>
+</body>
+</html>

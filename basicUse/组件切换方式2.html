@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue切换方式2</title>
+    <script src="js/vue.js"></script>
+	
+</head>
+<body>
+  <div id="app">
+      <a href=""  @click.prevent='con="login"'>登录<a><hr/>
+	  <a href=""  @click.prevent='con="register"'>注册<a>
+	  <component :is="con"></component>
+  </div>
+  <script>
+      Vue.component('login',{
+	    template:'<h2>登录组件</h2>'
+	  });
+	  Vue.component('register',{
+	    template:'<h2>注册组件</h2>'
+	  });
+      var vm=new Vue({
+          el:"#app",
+          data:{
+             con:'login'
+          }
+      });
+  </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-for的key属性的使用</title>
+	 <script src="js/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+	<!--key属性的使用-->
+	<p v-for="(obj,key) in objList" :key="obj.name">{{obj.name}}:{{obj.age}}</p>
+  </div>
+  <script>
+      var vm=new Vue({
+	    el:"#app",
+		data:{
+		   objList:[
+		      {
+			     name:"man1",
+				 age:11
+			  },
+			  {
+			    name:"man2",
+				age:12
+			  }
+		   ]
+		}
+	  });
+  </script>
+</body>
+</html>

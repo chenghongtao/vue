@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-for的使用</title>
+	 <script src="js/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <!--如果使用 Vue.component 定义全局组件的时候，组件名称使用了 驼峰命名，则在引用组件的时候，需要把 大写的驼峰改为小写的字母，同时，两个单词之前，使用 - 链接；-->
+    <!--1. <my-con></my-con>-->
+	
+	
+	<!--如果不使用驼峰,则直接拿名称来使用即可-->
+	<mycon></mycon>
+  </div>
+  <script>
+      //可以将该对象创建到单独的js文件中，方便管理
+	  //创建组件
+      var testCon={
+	     template:'<h3>这是新创建的组件</h3>'
+	  };
+	 //1. Vue.component('myCon',testCon);
+	 //管理组件
+	 Vue.component('mycon',testCon);
+      var vm=new Vue({
+	    el:"#app",
+		data:{
+		}
+	  });
+  </script>
+</body>
+</html>

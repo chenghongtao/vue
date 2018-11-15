@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>过滤器</title>
+	 <script src="js/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+     <p>{{date|dataFormat()}}</p>
+  </div>
+  <script>
+      //定义过滤器,并将过滤器和vue对象绑定
+	  Vue.filter('dataFormat',function(date){
+	      var year=date.getFullYear();
+		  var month=date.getMonth()+1;
+		  var days=date.getDay();
+		  //字符串补齐函数padStart(maxLen,str) padEnd(maxLen,str)
+		  month=month.toString().padStart(3,'0');
+		  days=days.toString().padEnd(3,'0');
+	      return year+"-"+month+"-"+days;
+	  });
+      var vm=new Vue({
+	    el:"#app",
+		data:{
+		  date:new Date()
+		}
+	  });
+  </script>
+</body>
+</html>

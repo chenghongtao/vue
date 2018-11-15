@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>内联样式绑定</title>
+	 <script src="js/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <!--:style 为标签绑定样式（后边跟一个或者多个样式对象【用大括号】） -->
+	<!--包含其他字符，要加双引号-->
+	<!--如果是单个样式，则直接定义为对象-->
+	<p  :style="{'font-size':'30px','color':'red'}"> 内联样式绑定</p>
+	
+	
+	
+	<!--如果是多个个样式，则使用数组-->
+	<p  :style="[{'font-size':'30px'},{'color':'green'}]"> 内联样式绑定</p
+	
+	<!--如果是多个个样式，也可以将样式对象定义到data中-->
+	<!--注意：引用样式对象没有引号-->
+	<p  :style="[styleObj1,styleObj2]"> 内联样式绑定</p>
+  </div>
+  <script>
+      var vm=new Vue({
+	    el:"#app",
+		data:{
+		   flag1:true,
+		   styleObj1:{'font-size':'30px'},
+		   styleObj2:{'color':'blue'}
+		}
+	  });
+  </script>
+</body>
+</html>
